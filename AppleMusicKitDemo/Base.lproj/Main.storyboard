@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppleMusicKitDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bKo-p6-YUM">
+                                <rect key="frame" x="67" y="35" width="241" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bKo-p6-YUM" secondAttribute="height" multiplier="1:1" id="nFc-pj-5SZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBh-ZQ-ykn">
+                                <rect key="frame" x="125" y="296" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJf-Zm-cFl">
+                                <rect key="frame" x="161" y="332" width="53" height="30"/>
+                                <state key="normal" title="Choose"/>
+                                <connections>
+                                    <action selector="chooseSongAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQd-me-GuB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-7r-NbO">
+                                <rect key="frame" x="159" y="370" width="57" height="30"/>
+                                <state key="normal" title="Random"/>
+                                <connections>
+                                    <action selector="playRandomSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B6r-8A-dM8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYm-Z9-wQs">
+                                <rect key="frame" x="172.5" y="415" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playPauseSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRa-z2-nCK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJf-Zm-cFl" firstAttribute="top" secondItem="rBh-ZQ-ykn" secondAttribute="bottom" constant="15" id="2ov-rE-Cok"/>
+                            <constraint firstItem="bKo-p6-YUM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="FPT-zf-fET"/>
+                            <constraint firstItem="rBh-ZQ-ykn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVz-vk-beD"/>
+                            <constraint firstItem="fbi-7r-NbO" firstAttribute="top" secondItem="pJf-Zm-cFl" secondAttribute="bottom" constant="8" id="PIw-mh-Y6o"/>
+                            <constraint firstItem="JYm-Z9-wQs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SD8-cf-S4c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bKo-p6-YUM" secondAttribute="trailing" constant="67" id="VRR-R0-Z9L"/>
+                            <constraint firstItem="JYm-Z9-wQs" firstAttribute="top" secondItem="fbi-7r-NbO" secondAttribute="bottom" constant="15" id="YPa-9w-yGB"/>
+                            <constraint firstItem="pJf-Zm-cFl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bg5-wa-USP"/>
+                            <constraint firstItem="bKo-p6-YUM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="gnq-cg-vZg"/>
+                            <constraint firstItem="fbi-7r-NbO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i5D-aC-8V9"/>
+                            <constraint firstItem="rBh-ZQ-ykn" firstAttribute="top" secondItem="bKo-p6-YUM" secondAttribute="bottom" constant="20" id="jfq-eR-Qgi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="JYm-Z9-wQs" id="JL3-br-tKW"/>
+                        <outlet property="songImageView" destination="bKo-p6-YUM" id="Dai-3L-HBC"/>
+                        <outlet property="titleLabel" destination="rBh-ZQ-ykn" id="HZ2-kc-tsr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>
